@@ -109,11 +109,11 @@ def quineMcCluskey(mt,dc):
     # Primary grouping ends
 
     # Primary group printing starts
-    print("\n\n\n\nGroup No.\tMintermini\tBinary Mintermini\n%s" % ('=' * 50))
+    print("\n\n\n\n\t\tMintermini\t\tBinary Mintermini\n%s" % ('=' * 50))
     for i in sorted(groups.keys()):
-        print("%5d:" % i)  # Prints group number
+        print("|%5d:" % i)  # Prints group number
         for j in groups[i]:
-            print("\t\t    %-20d%s" % (int(j, 2), j))  # Prints minterm and its binary representation
+            print("|\t\t    %-20d%s" % (int(j, 2), j))  # Prints minterm and its binary representation
         print('-' * 50)
     # Primary group printing ends
 
@@ -148,11 +148,11 @@ def quineMcCluskey(mt,dc):
                   None if len(all_pi) == 0 else ', '.join(all_pi))  # Print all prime implicants
             break
         # Printing of all the next groups starts
-        print("\n\n\n\nGroup No.\tMintermini\tBinary Mintermini\n%s" % ('=' * 50))
+        print("\n\n\n\n\t\tMintermini\t\tBinary Mintermini\n%s" % ('=' * 50))
         for i in sorted(groups.keys()):
-            print("%5d:" % i)  # Prints group number
+            print("|%5d:" % i)  # Prints group number
             for j in groups[i]:
-                print("\t\t%-24s%s" % (','.join(findminterms(j)), j))  # Prints minterms and its binary representation
+                print("|\t\t%-24s%s" % (','.join(findminterms(j)), j))  # Prints minterms and its binary representation
             print('-' * 50)
         # Printing of all the next groups ends
     # Process for creating tables and finding prime implicants ends
@@ -189,6 +189,6 @@ def quineMcCluskey(mt,dc):
             P.pop(0)
         final_result = [min(P[0], key=len)]  # Choosing the term with minimum variables from P
         final_result.extend(findVariables(i) for i in EPI)  # Adding the EPIs to final solution
-    print('\n\n nSoluzione: F = ' + ' + '.join(''.join(i) for i in final_result))
+    print('\n\n Soluzione: F = ' + ' + '.join(''.join(i) for i in final_result))
     soluzione =(' F = ' + ' + '.join(''.join(i) for i in final_result))
     return soluzione
