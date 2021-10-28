@@ -160,7 +160,7 @@ def quineMcCluskey(mt,dc):
     # Printing and processing of Prime Implicant chart starts
     sz = len(str(mt[-1]))  # The number of digits of the largest minterm
     chart = {}
-    print('\n\n\nImplicanti primi (caratteri):\n\n    Minterms    |%s\n%s' % (
+    print('\n\n\nImplicanti primi (caratteri):\n\n   Mintermini   |%s\n%s' % (
     ' '.join((' ' * (sz - len(str(i)))) + str(i) for i in mt), '=' * (len(mt) * (sz + 1) + 16)))
     for i in all_pi:
         merged_minterms, y = findminterms(i), 0
