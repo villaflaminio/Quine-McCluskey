@@ -1,5 +1,6 @@
 # Quine-McCluskey
 [![Build Status](https://travis-ci.org/codecentric/springboot-sample-app.svg?branch=master)](https://travis-ci.org/codecentric/springboot-sample-app)
+
 ==========Risolutore reti logiche==========
 1) Karnaugh
 2) Quine-McCluskey
