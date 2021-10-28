@@ -1,14 +1,3 @@
-# FDC KM 0.1.1
-#
-
-'''
-1.ustal ilość zmiennych
-2.pobierz iloczyny pełne równe 1
-3.zbuduj tablicę
-4.wypełnij tablicę
-5.POGRUPUJ
-6.uporządkuj&usuń duplikaty
-7.odczytaj & wypisz'''
 import QuineMcCluskey
 
 ST = [0,1,3,2]
@@ -75,24 +64,6 @@ def Trans_Rev(TK):
             wyz.append(wz)
         TT.append(wyz)
         
-    '''for i in range(X):
-        xyz = []
-        for j in range(Y):
-            xy = []
-            for k in range(Z):
-                xx = []
-                for l in range(W):
-                    xx.append([TK[n][0],TK[n][5],TK[n][6]])
-                    n+=1
-                    if(l==3): xx[3],xx[2]=xx[2],xx[3];
-                xy.append(xx)
-                if(k==3): xy[3],xy[2]=xy[2],xy[3];
-            xyz.append(xy)
-            if(j==3): xyz[3],xyz[2]=xyz[2],xyz[3];
-        TT.append(xyz)
-        if(i==3): TT[3],TT[2]=TT[2],TT[3];
-    return TT;'''
-
     for i in range(X):
         for j in range(Y):
             for k in range(Z):
@@ -1003,26 +974,15 @@ def Drukuj(n,lista):
     return wynik
                         
 def karnaugh(dane,ndane):
-    #============================================================================##
 
     nn=1
     for i in range(n): nn=nn*2;
-    #3.tworzenie TK, przechowywanie wartości i położenia:
     for l in range(W):
         for k in range(Z):
             for j in range(Y):
                 for i in range(X):
                     TK.append(['-',ST[i],ST[j],ST[k],ST[l],'d','b'])
 
-    ''' 0 - wartość 0/1/-
-        1 - położenie na osi x
-        2 - położenie na osi y
-        3 - położenie na osi z
-        4 - położenie na osi w
-        5 - id iloczynu
-        6 - id iloczynu (bin)'''
-
-    #4.wypełnainie tablicy na podstawie dostarczonych danych:
     for i in range(len(TK)):
         if(i in dane): TK[i][0]=1
         elif(i in ndane): TK[i][0]='-'
@@ -1031,14 +991,11 @@ def karnaugh(dane,ndane):
         TK[i][6]="{0:b}".format(i)
 
 
-    #5.transformacja tablicy
     TT=Trans(TK); print(); Wypisz(TT)
     rTT=Trans_Rev(TT)
-    #5,5.grupowanie
     Grupy = Lista(TK,rTT)
     Grupy = Filtruj(Grupy)
     Grupy = Filtr_2(Grupy,TK,rTT)
-    #6.Odczyt i wypisanie wyniku
     Grupy = Minim(int(n),Grupy,rTT)
     wynik = Drukuj(int(n),Grupy)
 
