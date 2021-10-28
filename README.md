@@ -45,7 +45,7 @@ f(a,b,c,d) = ON(1,2,6,8,9,10,14) DC(7,13,15)
 
 
     
-            Mintermini		Binary Mintermini
+                Mintermini		Binary Mintermini
     ==================================================
     |    1:
     |		    1                   0001
@@ -70,7 +70,7 @@ f(a,b,c,d) = ON(1,2,6,8,9,10,14) DC(7,13,15)
 
 
 
-            Mintermini		Binary Mintermini
+              Mintermini		Binary Mintermini
     ==================================================
     |    0:
     |		1,9                     -001
@@ -95,7 +95,7 @@ f(a,b,c,d) = ON(1,2,6,8,9,10,14) DC(7,13,15)
 
 
 
-            Mintermini		Binary Mintermini
+             Mintermini		Binary Mintermini
     ==================================================
     |    0:
     |		2,6,10,14               --10
